@@ -41,14 +41,14 @@ export const authenticationSlice = createSlice({
 export const loginAsync = payload => dispatch => {
     setTimeout(() => {
         dispatch(login(payload));
-    }, 2000);
+    }, 1000);
 };
 
 
-export const logoutAsync = amount => dispatch => {
+export const logoutAsync = payload => dispatch => {
     setTimeout(() => {
-        dispatch(logout(amount));
-    }, 2000);
+        dispatch(logout(payload));
+    }, 1000);
 };
 
 export const { login, logout } = authenticationSlice.actions;

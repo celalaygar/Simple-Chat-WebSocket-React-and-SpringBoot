@@ -4,6 +4,7 @@ body {
 }
 * {
     background: #222D32;
+    color: white;
 }
 .login-box {
     margin-top: 75px;

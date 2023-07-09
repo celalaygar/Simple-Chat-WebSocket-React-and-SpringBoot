@@ -39,7 +39,8 @@ const Login = () => {
                     </div>
 
                     <div className="col-lg-12 login-form">
-                        <div className="col-lg-12 login-form"><form autoComplete="off">
+                        <div className="col-lg-12 login-form">
+                            <form autoComplete="off">
                             <div className="form-group">
                                 <label className="form-control-label">USERNAME</label>
                                 <input type="text" name="username"  onChange={(e) => onChangeData(e)} value={loginBody?.username} className="form-control" />
@@ -59,17 +60,14 @@ const Login = () => {
                                         onClick={e => login(e)}
                                         className="btn btn-outline-primary">LOGIN</button>
                                 </div>
-                            </div></form>
+                            </div>
+                        </form>
                         </div>
                     </div>
                     <div className="col-lg-3 col-md-2"></div>
                 </div>
             </div>
         </div>
-
-
-
-
 
     );
 };
