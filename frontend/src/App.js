@@ -60,26 +60,25 @@ function App() {
               <div className="col-lg-12">
                 <div className="col-lg-12 login-title">Chat</div>
                 <hr />
-                "q11212312412313123124"
-                <hr />
-                <div className="col-lg-12 login-form">
-                  <div className="col-lg-12 login-form">
-                    <form autoComplete="off">
+                <form autoComplete="off">
+                  <div className='row'>
+                    <div className="col-lg-10 login-form">
                       <div className="form-group">
                         <label className="form-control-label">Message</label>
                         <input type="text" name="messageBody" onChange={(e) => onChangeData(e)} value={message?.messageBody} className="form-control" />
                       </div>
-                      <div className="col-lg-12 loginbttm">
-                        <div className="col-lg-1 login-btm login-button">
-                          <button
-                            type='submit'
-                            onClick={e => sendMessage(e)}
-                            className="btn btn-outline-primary">Send</button>
-                        </div>
+                    </div>
+                    <div className="col-lg-1 loginbttm">
+                      <div className="col-lg-1 loginbttm login-button">
+                        <button
+                          type='submit'
+                          onClick={e => sendMessage(e)}
+                          className="btn btn-outline-primary">Send</button>
                       </div>
-                    </form>
+                    </div>
                   </div>
-                </div>
+
+                </form>
               </div>
             </div>
           </div>
