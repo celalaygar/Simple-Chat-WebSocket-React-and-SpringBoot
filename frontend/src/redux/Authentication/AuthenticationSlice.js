@@ -6,6 +6,7 @@ const initialStateValues = {
     password: null,
     email: null,
     token: null,
+    room: null,
     isloggedIn: false
 }
 
@@ -19,6 +20,7 @@ export const authenticationSlice = createSlice({
             state.password = action.payload.password;
             state.email = action.payload.email;
             state.token = action.payload.token;
+            state.room = action.payload.room;
             state.isloggedIn = true;
         },
         logout: (state, action) => {
@@ -28,6 +30,7 @@ export const authenticationSlice = createSlice({
                 state.password = null;
                 state.email = null;
                 state.token = null;
+                state.room = null;
                 state.isloggedIn = false;
                 console.log("Üye çıkış işlemi yapılmıştır.")
             } else {

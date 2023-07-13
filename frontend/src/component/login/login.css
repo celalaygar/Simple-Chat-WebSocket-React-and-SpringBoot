@@ -58,6 +58,30 @@ input[type=text]:focus, input[type=password]:focus{
     padding-left: 0px;
     color: #ECF0F5;
 }
+.form-select-room {
+    background-color: #1A2226 !important;
+    border: none !important;
+    border-bottom: 2px solid #acb58c !important;
+    border-top: 0px !important;
+    border-radius: 0px !important;
+    font-weight: bold !important;
+    outline: 0 !important;
+    margin-bottom: 20px !important;
+    padding-left: 0px !important;
+    color: #ECF0F5 !important;
+}
+.form-select-room :focus{
+    background-color: #1A2226 !important;
+    border: none !important;
+    border-bottom: 2px solid #e8f0f1 !important;
+    border-top: 0pxsolid #e8f0f1 !important;
+    border-radius: 0px !important;
+    font-weight: bold !important;
+    outline: 0 !important;
+    margin-bottom: 20px !important;
+    padding-left: 0px !important;
+    color: #ECF0F5 !important;
+}
 .form-group {
     margin-bottom: 40px;
     outline: 0px;
