@@ -18,23 +18,23 @@ function App() {
 
   const [messageList, setMessageList] = useState([
     {
-      message: "Aloo geliyom",
+      message: "I'm gonna wait for you",
       me: selectedAuth?.username,
-      to: "aaa",
+      to: "Micheal X Large",
       channel: "",
       createdDate: new Date(),
     },
     {
-      message: "Hazır Olun",
+      message: "Are you ready",
       me: selectedAuth?.username,
-      to: "aaa",
+      to: "Daniel Marcos",
       channel: "",
       createdDate: new Date(),
     },
     {
-      message: "Geliyooom",
-      me: selectedAuth?.username,
-      to: "aaa",
+      message: "I wanna go",
+      me: "George",
+      to: selectedAuth?.username,
       channel: "",
       createdDate: new Date(),
     },
@@ -88,18 +88,28 @@ function App() {
                   className="btn btn-outline-primary" >Log out</div>
               </div>
               <hr />
-              <div className="col-lg-12 messages-panel"  >
-                <div className='row message-row'>
-                  <div className="col-lg-12 message-body">
-                    <div className="col-lg-2 message-me">Me: {selectedAuth?.username}</div>
-                    <div className='message-content'>
-                      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+              {
+                !!messageList.length && messageList.map(item => (
+
+                  <>
+                    {selectedAuth?.username === item.me && <div className="col-lg-6"></div>}
+
+                    <div className="col-lg-5 messages-panel"  >
+                      <div className='row message-row'>
+                        <div className="col-lg-12 message-body">
+                          <div className="col-lg-12 message-me">Who: {selectedAuth?.username === item.me ? item.to : item.me}</div>
+                          <div className='message-content'>
+                            {item.message}
+                          </div>
+                          <div className="col-lg-4 message-createdDate">{dateFormat(item.createdDate)}</div>
+                        </div>
+                      </div>
                     </div>
-                    <div className="col-lg-2 message-to">To: {"Mamudo"}</div>
-                    <div className="col-lg-1 message-createdDate">{dateFormat(new Date())}</div>
-                  </div>
-                </div>
-              </div>
+                    {!(selectedAuth?.username === item.me) && <div className="col-lg-6"></div>}
+                  </>
+                ))
+              }
+
               <hr />
               <div className="col-lg-12 message-input-panel">
                 <form autoComplete="off">
