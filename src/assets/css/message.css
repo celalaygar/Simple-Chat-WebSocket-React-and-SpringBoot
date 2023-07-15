@@ -1,0 +1,72 @@
+.message-title {
+    background-color: #1A2226;
+    color: white;
+    font-size: 25px;
+    margin: 5px;
+}
+
+
+.message-input-panel {
+    background-color: #636767;
+    color: black;
+    margin: 5px 0;
+}
+
+.messages-panel {
+    background: #433D32;
+    border: 1px solid #d3e08d;
+    padding: 2px;
+    margin: 5px;
+}
+
+.message-row {
+    padding: 2px;
+    margin: 5px;
+    border-radius: 5%;
+}
+
+.message-body {
+    padding: 2px;
+    margin: 0px;
+    border-radius: 1%;
+    overflow-wrap: break-word;
+}
+
+.message-content {
+    padding: 2px;
+    margin: 15px 0;
+    background-color: #222D32;
+    color: white;
+    font-size: 15px;
+    overflow-wrap: break-word;
+    border-bottom: 1px solid #d3e08d;
+}
+
+
+
+.message-me {
+    overflow-wrap: break-word;
+    border-bottom: 1px solid #d3e08d;
+    font-size: 12px;
+    padding: 2px;
+    margin: 5px;
+}
+
+.message-to {
+    font-size: 12px;
+    border-bottom: 1px solid #d3e08d;
+    overflow-wrap: break-word;
+    float: left;
+    padding: 2px;
+    margin: 5px 0;
+    border-radius: 5%;
+}
+
+.message-createdDate {
+    border-bottom: 1px solid #d3e08d;
+    padding: 2px;
+    margin: 5px;
+    float: right;
+    font-size: 12px;
+    overflow-wrap: break-word;
+}
