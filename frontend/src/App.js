@@ -2,8 +2,10 @@
 import Login from './component/login/login';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import moment from 'moment';
 import { logoutAsync, selectedAuthentication } from './redux/Authentication/AuthenticationSlice';
-import "./App.css"
+import "./assets/css/message.css"
+import { dateFormat } from './component/Moment/DateFormat';
 function App() {
 
   const selectedAuth = useSelector(selectedAuthentication);
@@ -13,6 +15,32 @@ function App() {
   });
   const [room, setRoom] = useState("");
   const [isLoggedIn, setLoggedIn] = useState(false);
+
+  const [messageList, setMessageList] = useState([
+    {
+      message: "Aloo geliyom",
+      me: selectedAuth?.username,
+      to: "aaa",
+      channel: "",
+      createdDate: new Date(),
+    },
+    {
+      message: "Hazır Olun",
+      me: selectedAuth?.username,
+      to: "aaa",
+      channel: "",
+      createdDate: new Date(),
+    },
+    {
+      message: "Geliyooom",
+      me: selectedAuth?.username,
+      to: "aaa",
+      channel: "",
+      createdDate: new Date(),
+    },
+  ]);
+
+
 
   const dispatch = useDispatch();
 
@@ -61,15 +89,16 @@ function App() {
               </div>
               <hr />
               <div className="col-lg-12 messages-panel"  >
-                qwrqwrqw
-                qwrqwrqwr
-                qwrqwr<br />
-                qwrqwrqwq
-                qwrqwr
-                qwrqwr<br />
-                qwrqwrqwq
-                qwrqwr<br />
-                qwrqwrqwq
+                <div className='row message-row'>
+                  <div className="col-lg-12 message-body">
+                    <div className="col-lg-2 message-me">Me: {selectedAuth?.username}</div>
+                    <div className='message-content'>
+                      aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                    </div>
+                    <div className="col-lg-2 message-to">To: {"Mamudo"}</div>
+                    <div className="col-lg-1 message-createdDate">{dateFormat(new Date())}</div>
+                  </div>
+                </div>
               </div>
               <hr />
               <div className="col-lg-12 message-input-panel">
