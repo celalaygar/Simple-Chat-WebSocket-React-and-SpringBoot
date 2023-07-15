@@ -2,10 +2,12 @@ body {
     background: #222D32;
     font-family: 'Roboto', sans-serif;
 }
+
 * {
     background: #222D32;
     color: white;
 }
+
 .login-box {
     margin-top: 75px;
     height: auto;
@@ -31,10 +33,13 @@ body {
     text-align: left;
     background: #1A2226;
 }
+
 form {
     background: #1A2226;
 }
-input[type=text], input[type=password]  {
+
+input[type=text],
+input[type=password] {
     background-color: #1A2226;
     border: none;
     border-bottom: 2px solid #acb58c;
@@ -46,7 +51,9 @@ input[type=text], input[type=password]  {
     padding-left: 0px;
     color: #ECF0F5;
 }
-input[type=text]:focus, input[type=password]:focus{
+
+input[type=text]:focus,
+input[type=password]:focus {
     background-color: #1A2226;
     border: none;
     border-bottom: 2px solid #e8f0f1;
@@ -58,6 +65,7 @@ input[type=text]:focus, input[type=password]:focus{
     padding-left: 0px;
     color: #ECF0F5;
 }
+
 .form-select-room {
     background-color: #1A2226 !important;
     border: none !important;
@@ -70,7 +78,8 @@ input[type=text]:focus, input[type=password]:focus{
     padding-left: 0px !important;
     color: #ECF0F5 !important;
 }
-.form-select-room :focus{
+
+.form-select-room :focus {
     background-color: #1A2226 !important;
     border: none !important;
     border-bottom: 2px solid #e8f0f1 !important;
@@ -82,6 +91,7 @@ input[type=text]:focus, input[type=password]:focus{
     padding-left: 0px !important;
     color: #ECF0F5 !important;
 }
+
 .form-group {
     margin-bottom: 40px;
     outline: 0px;
@@ -138,15 +148,16 @@ label {
 .login-button {
     padding-right: 0px;
     text-align: right;
-    margin-bottom: 25px;
 }
 
 .login-text {
     text-align: left;
+    font-size: 20px;
     padding-left: 0px;
     color: #A2A4A4;
 }
 
 .loginbttm {
     padding: 0px;
+    margin-bottom: 25px;
 }

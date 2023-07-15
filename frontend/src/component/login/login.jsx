@@ -14,6 +14,10 @@ const Login = () => {
     });
     const [rooms, setRooms] = useState(["BTC", "ETC", "PEPE", "PumpETH", "SHIBA"]);
 
+    const [error, setError] = useState({
+        title: null,
+        message: null,
+    });
 
     const dispatch = useDispatch();
 
@@ -21,10 +25,12 @@ const Login = () => {
         let body = { ...loginBody };
         body[e.target.name] = e.target.value;
         setLoginBody({ ...body });
+        setErrorValue(null, null);
     }
-    const login = e => {
+    const login = async (e) => {
         e.preventDefault();
         if (loginBody?.room === "") {
+            await setErrorValue("chose room", "chose room");
             console.log("chose room");
             return;
         }
@@ -36,6 +42,12 @@ const Login = () => {
             room: loginBody.room,
             token: loginBody.password + "+++" + loginBody.password,
         }))
+    }
+    const setErrorValue = async (title, message) => {
+        let error = {}
+        error["title"] = title;
+        error["message"] = message;
+        setError({ ...error })
     }
     return (
 
@@ -61,24 +73,27 @@ const Login = () => {
                                 <div className="form-group">
                                     <label className="form-control-label">ROOM</label>
                                     <select className="form-select form-select-room " name={"room"} value={loginBody?.room} onChange={(e) => onChangeData(e)}>
-                                                <option value={""}>{"Choose Room"}</option>
+                                        <option value={""}>{"Choose Room"}</option>
                                         {
-                                            rooms?.map(item => 
+                                            rooms?.map(item =>
                                                 <option key={item} value={item}>{item}</option>
                                             )
                                         }
                                     </select>
                                 </div>
                                 <div className="col-lg-12 loginbttm">
-                                    <div className="col-lg-6 login-btm login-text">
-                                        Error Message
+                                    <div className='row'>
+                                        <div className="col-lg-6 login-btm login-text">
+                                            Error: {error?.message}
+                                        </div>
+                                        <div className="col-lg-6 login-btm login-button">
+                                            <button
+                                                type='submit'
+                                                onClick={e => login(e)}
+                                                className="btn btn-outline-primary">LOGIN</button>
+                                        </div>
                                     </div>
-                                    <div className="col-lg-6 login-btm login-button">
-                                        <button
-                                            type='submit'
-                                            onClick={e => login(e)}
-                                            className="btn btn-outline-primary">LOGIN</button>
-                                    </div>
+
                                 </div>
                             </form>
                         </div>
