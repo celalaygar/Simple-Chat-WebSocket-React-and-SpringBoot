@@ -6,7 +6,6 @@
 }
 
 
-
 .message-input-panel {
     background-color: #636767;
     color: black;
@@ -14,6 +13,7 @@
 }
 
 .messages-panel {
+    background: #433D32;
     border: 1px solid #d3e08d;
     padding: 2px;
     margin: 5px;
