@@ -1,6 +1,6 @@
 
 import Login from './component/login/login';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import moment from 'moment';
 import { logoutAsync, selectedAuthentication } from './redux/Authentication/AuthenticationSlice';
@@ -16,31 +16,60 @@ function App() {
   const [room, setRoom] = useState("");
   const [isLoggedIn, setLoggedIn] = useState(false);
 
-  const [messageList, setMessageList] = useState([
-    {
-      message: "I'm gonna wait for you",
-      me: selectedAuth?.username,
-      to: "Micheal X Large",
-      channel: "",
-      createdDate: new Date(),
-    },
-    {
-      message: "Are you ready",
-      me: selectedAuth?.username,
-      to: "Daniel Marcos",
-      channel: "",
-      createdDate: new Date(),
-    },
-    {
-      message: "I wanna go",
-      me: "George",
-      to: selectedAuth?.username,
-      channel: "",
-      createdDate: new Date(),
-    },
-  ]);
+  const [messageList, setMessageList] = useState([]);
 
-
+  useEffect(() => {
+    setMessageList([
+      {
+        id: "1",
+        message: "I'm gonna wait for you",
+        me: selectedAuth?.username,
+        to: "Micheal X Large",
+        channel: "",
+        createdDate: new Date(),
+      },
+      {
+        id: "2",
+        message: "Are you ready",
+        me: selectedAuth?.username,
+        to: "Daniel Marcos",
+        channel: "",
+        createdDate: new Date(),
+      },
+      {
+        id: "3",
+        message: "I wanna go",
+        me: "George",
+        to: selectedAuth?.username,
+        channel: "",
+        createdDate: new Date(),
+      },
+      {
+        id: "4",
+        message: "I miss you..",
+        me: "Excalm",
+        to: selectedAuth?.username,
+        channel: "",
+        createdDate: new Date(),
+      },
+      {
+        id: "5",
+        message: "I wanna watch a movie about fast x,I miss you..I wanna come your home to help clean for use fastly",
+        me: selectedAuth?.username,
+        to: "Daniel Marcos",
+        channel: "",
+        createdDate: new Date(),
+      },
+      {
+        id: "6",
+        message: "I wanna watch a movie about fast x,I miss you..I wanna come your home to help clean for use fastly",
+        me: selectedAuth?.username,
+        to: "Daniel Marcos",
+        channel: "",
+        createdDate: new Date(),
+      },
+    ])
+  }, [selectedAuth]);
 
   const dispatch = useDispatch();
 
@@ -92,20 +121,23 @@ function App() {
                 !!messageList.length && messageList.map(item => (
 
                   <>
-                    {selectedAuth?.username === item.me && <div className="col-lg-6"></div>}
+                    {selectedAuth?.username === item.me && <div className="col-lg-4"></div>}
 
-                    <div className="col-lg-5 messages-panel"  >
+                    <div key={item.id} className="col-lg-7 messages-panel"  >
+                      {item.me}
                       <div className='row message-row'>
                         <div className="col-lg-12 message-body">
-                          <div className="col-lg-12 message-me">Who: {selectedAuth?.username === item.me ? item.to : item.me}</div>
-                          <div className='message-content'>
+                          <div className="col-lg-6 message-me">
+                            {selectedAuth?.username === item.me ? item.to : item.me}
+                          </div>
+                          <div className="col-lg-3 message-createdDate">{dateFormat(item.createdDate)}</div>
+                          <div className='col-lg-12 message-content'>
                             {item.message}
                           </div>
-                          <div className="col-lg-4 message-createdDate">{dateFormat(item.createdDate)}</div>
                         </div>
                       </div>
                     </div>
-                    {!(selectedAuth?.username === item.me) && <div className="col-lg-6"></div>}
+                    {!(selectedAuth?.username === item.me) && <div className="col-lg-4"></div>}
                   </>
                 ))
               }
