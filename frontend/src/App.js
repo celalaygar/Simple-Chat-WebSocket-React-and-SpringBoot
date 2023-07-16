@@ -54,7 +54,7 @@ function App() {
       },
       {
         id: "5",
-        message: "I wanna watch a movie about fast x,I miss you..I wanna come your home to help clean for use fastly",
+        message: "I wanna watch a movie about fast x,I miss you.. for use fastly",
         me: selectedAuth?.username,
         to: "Daniel Marcos",
         channel: "",
@@ -65,6 +65,38 @@ function App() {
         message: "I wanna watch a movie about fast x,I miss you..I wanna come your home to help clean for use fastly",
         me: selectedAuth?.username,
         to: "Daniel Marcos",
+        channel: "",
+        createdDate: new Date(),
+      },
+      {
+        id: "7",
+        message: "I wanna watch a movie about fast x,I miss you.. for use fastly",
+        me: "Obama Tarm",
+        to: selectedAuth?.username,
+        channel: "",
+        createdDate: new Date(),
+      },
+      {
+        id: "8",
+        message: "I wanna watch a movie about fast x,I miss you.. for use fastly",
+        me: "Obama Range ",
+        to: selectedAuth?.username,
+        channel: "",
+        createdDate: new Date(),
+      },
+      {
+        id: "9",
+        message: "capitalize on the potential of the Metaverse. We assist our clients throughout the entire metaverse development process, ",
+        me: selectedAuth?.username,
+        to: "Ti Start ",
+        channel: "",
+        createdDate: new Date(),
+      },
+      {
+        id: "10",
+        message: "The future of communication will combine new technology with the power of reality. With 3D communication, we can connect like never before.",
+        me: "Metaverse Extreme",
+        to: selectedAuth?.username,
         channel: "",
         createdDate: new Date(),
       },
@@ -97,17 +129,16 @@ function App() {
   return (
     <div >
 
-      <hr />
       {
         !selectedAuth?.isloggedIn ?
           <Login />
           :
           <div className='container'>
-            <div className='row'>
-              <div className="col-lg-4  message-title">
-                <span style={{ color: "white" }}>User Name : {selectedAuth.username + ""} </span>
+            <div className='row  mt-2 '>
+              <div className="col-lg-4 title-spans">
+                <span className='title-span' >User Name : {selectedAuth.username + ""} </span>
                 <br />
-                <span style={{ color: "white" }}>Room : {selectedAuth.room + ""} </span>
+                <span className='title-span' >Room : {selectedAuth.room + ""} </span>
               </div>
               <div className="col-lg-4  ">
               </div>
@@ -117,13 +148,21 @@ function App() {
                   className="btn btn-outline-primary" >Log out</div>
               </div>
               <hr />
+            </div>
+            <div className='row main-row'>
+
               {
                 !!messageList.length && messageList.map(item => (
 
                   <>
-                    {selectedAuth?.username === item.me && <div className="col-lg-3"></div>}
+                    {selectedAuth?.username === item.me &&
+                      <>
+                        <div className="col-lg-4"></div>
+                        <div className="col"></div>
+                      </>
+                    }
 
-                    <div key={item.id} className="col-lg-8 messages-panel"  >
+                    <div key={item.id} className="col-lg-5 messages-panel"  >
                       <div className='row message-row'>
                         <div className="col-lg-7 message-me">
                           {selectedAuth?.username === item.me ? item.to : item.me}
@@ -135,12 +174,20 @@ function App() {
                         </div>
                       </div>
                     </div>
-                    {!(selectedAuth?.username === item.me) && <div className="col-lg-3"></div>}
+                    {!(selectedAuth?.username === item.me) &&
+                      <>
+                        <div className="col"></div>
+                        <div className="col-lg-4"></div>
+                      </>
+                    }
                   </>
                 ))
               }
 
               <hr />
+
+            </div>
+            <div className='row'>
               <div className="col-lg-12 message-input-panel">
                 <form autoComplete="off">
                   <div className='row ' >
