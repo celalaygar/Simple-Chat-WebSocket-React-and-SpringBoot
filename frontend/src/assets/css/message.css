@@ -5,24 +5,11 @@
     margin: 5px;
 }
 
-
-.message-input-panel {
-    background-color: #636767;
-    color: black;
-    margin: 5px 0;
-}
-
-.messages-panel {
-    background: #433D32;
-    border: 1px solid #d3e08d;
-    padding: 2px;
-    margin: 5px;
-}
-
 .message-row {
     padding: 2px;
     margin: 5px;
     border-radius: 5%;
+    border: 2px solid #8a8fa8;
 }
 
 .message-body {
@@ -34,19 +21,17 @@
 
 .message-content {
     padding: 2px;
-    margin: 15px 0;
-    background-color: #222D32;
     color: white;
     font-size: 15px;
     overflow-wrap: break-word;
-    border-bottom: 1px solid #d3e08d;
+    border-bottom: 1px solid #8a8fa8;
 }
 
 
 
 .message-me {
     overflow-wrap: break-word;
-    border-bottom: 1px solid #d3e08d;
+    border-bottom: 1px solid #8a8fa8;
     font-size: 12px;
     padding: 2px;
     margin: 5px;
@@ -54,7 +39,7 @@
 
 .message-to {
     font-size: 12px;
-    border-bottom: 1px solid #d3e08d;
+    border-bottom: 1px solid #8a8fa8;
     overflow-wrap: break-word;
     float: left;
     padding: 2px;
@@ -63,7 +48,7 @@
 }
 
 .message-createdDate {
-    border-bottom: 1px solid #d3e08d;
+    border-bottom: 1px solid #8a8fa8;
     padding: 2px;
     margin: 5px;
     float: right;

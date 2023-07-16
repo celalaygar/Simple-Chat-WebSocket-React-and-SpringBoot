@@ -121,23 +121,21 @@ function App() {
                 !!messageList.length && messageList.map(item => (
 
                   <>
-                    {selectedAuth?.username === item.me && <div className="col-lg-4"></div>}
+                    {selectedAuth?.username === item.me && <div className="col-lg-3"></div>}
 
-                    <div key={item.id} className="col-lg-7 messages-panel"  >
-                      {item.me}
+                    <div key={item.id} className="col-lg-8 messages-panel"  >
                       <div className='row message-row'>
-                        <div className="col-lg-12 message-body">
-                          <div className="col-lg-6 message-me">
-                            {selectedAuth?.username === item.me ? item.to : item.me}
-                          </div>
-                          <div className="col-lg-3 message-createdDate">{dateFormat(item.createdDate)}</div>
-                          <div className='col-lg-12 message-content'>
-                            {item.message}
-                          </div>
+                        <div className="col-lg-7 message-me">
+                          {selectedAuth?.username === item.me ? item.to : item.me}
+                        </div>
+                        <div className="col"></div>
+                        <div className="col-lg-3 message-createdDate">{dateFormat(item.createdDate)}</div>
+                        <div className='col-lg-12 message-content'>
+                          {item.message}
                         </div>
                       </div>
                     </div>
-                    {!(selectedAuth?.username === item.me) && <div className="col-lg-4"></div>}
+                    {!(selectedAuth?.username === item.me) && <div className="col-lg-3"></div>}
                   </>
                 ))
               }
