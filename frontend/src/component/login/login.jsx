@@ -66,10 +66,10 @@ const Login = () => {
                                     <label className="form-control-label">USERNAME</label>
                                     <input type="text" name="username" onChange={(e) => onChangeData(e)} value={loginBody?.username} className="form-control" />
                                 </div>
-                                <div className="form-group">
+                                {/* <div className="form-group">
                                     <label className="form-control-label">PASSWORD</label>
                                     <input type="password" name="password" onChange={(e) => onChangeData(e)} value={loginBody?.password} className="form-control" />
-                                </div>
+                                </div> */}
                                 <div className="form-group">
                                     <label className="form-control-label">ROOM</label>
                                     <select className="form-select form-select-room " name={"room"} value={loginBody?.room} onChange={(e) => onChangeData(e)}>

@@ -134,20 +134,18 @@ function App() {
           <Login />
           :
           <div className='container'>
-            <div className='row  mt-2 '>
-              <div className="col-lg-4 title-spans">
+            <div className='row  mt-2 main-header-row'>
+              <div className="col-lg-5 title-spans">
                 <span className='title-span' >User Name : {selectedAuth.username + ""} </span>
-                <br />
-                <span className='title-span' >Room : {selectedAuth.room + ""} </span>
               </div>
-              <div className="col-lg-4  ">
+              <div className="col-lg-5 title-spans ">
+                <span className='title-span' >Room : {selectedAuth.room + ""} </span>
               </div>
               <div className="col login-button">
                 <div
                   onClick={e => logout(e)}
                   className="btn btn-outline-primary" >Log out</div>
               </div>
-              <hr />
             </div>
             <div className='row main-row'>
 
