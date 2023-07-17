@@ -160,13 +160,12 @@ function App() {
                       </>
                     }
 
-                    <div key={item.id} className="col-lg-5 messages-panel"  >
+                    <div key={item.id} className="col-lg-5"  >
                       <div className='row message-row'>
                         <div className="col-lg-7 message-me">
-                          {selectedAuth?.username === item.me ? item.to : item.me}
+                          {selectedAuth?.username !== item.me && item.me}
                         </div>
-                        <div className="col"></div>
-                        <div className="col-lg-3 message-createdDate">{dateFormat(item.createdDate)}</div>
+                        <div className="col-lg-4 message-createdDate">{dateFormat(item.createdDate)}</div>
                         <div className='col-lg-12 message-content'>
                           {item.message}
                         </div>
