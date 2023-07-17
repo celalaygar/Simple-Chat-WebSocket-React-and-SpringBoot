@@ -155,12 +155,12 @@ function App() {
                   <>
                     {selectedAuth?.username === item.me &&
                       <>
-                        <div className="col-lg-4"></div>
-                        <div className="col"></div>
+                        <div className="col-lg-2 col-empty"></div>
+                        <div className="col col-empty"></div>
                       </>
                     }
 
-                    <div key={item.id} className="col-lg-5"  >
+                    <div key={item.id} className="col-lg-8 col-body"  >
                       <div className='row message-row'>
                         <div className="col-lg-7 message-me">
                           {selectedAuth?.username !== item.me && item.me}
@@ -173,8 +173,8 @@ function App() {
                     </div>
                     {!(selectedAuth?.username === item.me) &&
                       <>
-                        <div className="col"></div>
-                        <div className="col-lg-4"></div>
+                        <div className="col col-empty"></div>
+                        <div className="col-lg-2 col-empty"></div>
                       </>
                     }
                   </>
