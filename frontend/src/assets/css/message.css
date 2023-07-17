@@ -46,7 +46,7 @@
 .message-row,
 .empty,
 .message-content,
-.message-me,
+.message-name,
 .message-createdDate {
     background-color: #cfd5c1;
     color: black;
@@ -54,14 +54,13 @@
 }
 
 .col-empty,
-.col-body {
+.message-body {
     background-color: #527b87;
 }
 
 .message-row {
-    padding: 10px;
+    padding: 5px;
     margin: 5px;
-    border-radius: 5%;
     border: 2px solid #323030;
 }
 
@@ -74,17 +73,13 @@
 
 
 
-.message-me {
+.message-name {
     overflow-wrap: break-word;
-    padding: 2px;
-    margin: 5px;
     font-size: 15px;
 }
 
 .message-createdDate {
     border-bottom: 2px solid #31333d;
-    padding: 2px;
-    margin: 5px;
     float: right;
     overflow-wrap: break-word;
 }

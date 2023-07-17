@@ -148,10 +148,8 @@ function App() {
               </div>
             </div>
             <div className='row main-row'>
-
               {
                 !!messageList.length && messageList.map(item => (
-
                   <>
                     {selectedAuth?.username === item.me &&
                       <>
@@ -159,16 +157,12 @@ function App() {
                         <div className="col col-empty"></div>
                       </>
                     }
-
-                    <div key={item.id} className="col-lg-8 col-body"  >
+                    <div key={item.id} className="col-lg-8 message-body"  >
                       <div className='row message-row'>
-                        <div className="col-lg-7 message-me">
-                          {selectedAuth?.username !== item.me && item.me}
-                        </div>
-                        <div className="col-lg-4 message-createdDate">{dateFormat(item.createdDate)}</div>
-                        <div className='col-lg-12 message-content'>
-                          {item.message}
-                        </div>
+                        <div className="col-lg-7 message-name">{selectedAuth?.username !== item.me && item.me}</div>
+                        <div className="col message-name"></div>
+                        <div className="col-lg-3 message-createdDate">{dateFormat(item.createdDate)}</div>
+                        <div className='col-lg-12 message-content'>{item.message}</div>
                       </div>
                     </div>
                     {!(selectedAuth?.username === item.me) &&
