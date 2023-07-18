@@ -1,0 +1,22 @@
+
+server:
+  port: 8500
+
+  # local
+spring:
+  main:
+    allow-circular-references: true
+  datasource:
+    initialization-mode: never
+    platform: postgresql
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/chat
+    password: postgres
+    username: postgres
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql:false:
