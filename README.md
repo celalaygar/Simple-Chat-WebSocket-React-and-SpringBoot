@@ -1,4 +1,4 @@
-# Simple Chat By Using WebSocket in React and SpringBoo
+# Simple Chat By Using Web Socket in React and SpringBoot
 
 ## Available Scripts
 
