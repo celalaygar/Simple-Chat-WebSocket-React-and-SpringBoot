@@ -1,7 +1,7 @@
 # Simple Chat Application
 Simple Chat Application By Using Web Socket in `React` and `SpringBoot`
-
-## Available Scripts
+## Back End
+## Front End
 
 ### `npm install`
 
