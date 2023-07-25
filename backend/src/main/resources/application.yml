@@ -1,8 +1,17 @@
 
+
+socket-server:
+  port: 8085
+    #write your ip address not localhost if you want to try with other devices on lan
+  host: 192.168.0.10
+
+
 server:
   port: 8500
+  servlet:
+    contextPath: /api
 
-  # local
+# local
 spring:
   main:
     allow-circular-references: true

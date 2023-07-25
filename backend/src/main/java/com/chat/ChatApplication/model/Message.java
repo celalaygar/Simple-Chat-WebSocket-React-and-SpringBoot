@@ -1,9 +1,6 @@
 package com.chat.ChatApplication.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Table(name = "messages")
 @Entity
@@ -17,4 +14,7 @@ public class Message {
     private String who;
     @Column
     private String room;
+
+    @Enumerated(EnumType.ORDINAL)
+    private MessageType messageType;
 }
