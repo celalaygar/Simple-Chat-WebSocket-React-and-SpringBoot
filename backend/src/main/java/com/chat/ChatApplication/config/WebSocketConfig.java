@@ -1,7 +1,7 @@
 package com.chat.ChatApplication.config;
 
 
-import com.chat.ChatApplication.util.WebSocketUserUtil;
+import com.chat.ChatApplication.util.WebSocketUMessageUtil;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.messaging.simp.config.MessageBrokerRegistry;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
@@ -14,13 +14,13 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry config) {
-        config.enableSimpleBroker(WebSocketUserUtil.TOPIC);
-        config.setApplicationDestinationPrefixes(WebSocketUserUtil.DESTINATION_PREFIX);
+        config.enableSimpleBroker(WebSocketUMessageUtil.TOPIC);
+        config.setApplicationDestinationPrefixes(WebSocketUMessageUtil.DESTINATION_PREFIX);
     }
 
     // Frontend teknolojilerine veri bu endpointten gelecektir.
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint(WebSocketUserUtil.END_POINT).setAllowedOriginPatterns("*").withSockJS();
+        registry.addEndpoint(WebSocketUMessageUtil.END_POINT).setAllowedOriginPatterns("*").withSockJS();
     }
 }
