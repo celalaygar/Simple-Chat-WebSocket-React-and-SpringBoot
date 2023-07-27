@@ -21,6 +21,6 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     // Frontend teknolojilerine veri bu endpointten gelecektir.
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        registry.addEndpoint(WebSocketUMessageUtil.END_POINT).setAllowedOriginPatterns("*").withSockJS();
+        registry.addEndpoint(WebSocketUMessageUtil.ADD_MESSAGE_END_POINT).setAllowedOriginPatterns("*").withSockJS();
     }
 }
