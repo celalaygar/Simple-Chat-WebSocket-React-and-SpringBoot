@@ -21,6 +21,4 @@ public class Message {
     @Column
     private Room room;
 
-    @Enumerated(EnumType.ORDINAL)
-    private MessageType messageType;
 }

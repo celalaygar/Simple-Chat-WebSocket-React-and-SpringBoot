@@ -27,6 +27,5 @@ public class MessageDto {
         this.message = message.getMessage();
         this.who = message.getWho();
         this.room = message.getRoom();
-        this.messageType = message.getMessageType();
     }
 }
