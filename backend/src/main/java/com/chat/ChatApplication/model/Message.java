@@ -16,6 +16,8 @@ public class Message {
     private String message;
     @Column
     private String who;
+
+    @Enumerated(EnumType.STRING)
     @Column
     private Room room;
 
