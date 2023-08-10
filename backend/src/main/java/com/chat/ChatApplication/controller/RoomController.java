@@ -2,6 +2,7 @@ package com.chat.ChatApplication.controller;
 
 import com.chat.ChatApplication.dto.RoomDto;
 import com.chat.ChatApplication.model.Room;
+import com.chat.ChatApplication.util.PathUtil;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,11 +13,11 @@ import java.util.Arrays;
 import java.util.List;
 
 @RestController
-@RequestMapping("/room")
+@RequestMapping(PathUtil.ROOM)
 public class RoomController {
 
 
-    @GetMapping("/all")
+    @GetMapping(PathUtil.GET_ALL)
     public ResponseEntity<List<RoomDto>> getMessages() {
 
         List<Room> rooms= Arrays.asList(Room.values());

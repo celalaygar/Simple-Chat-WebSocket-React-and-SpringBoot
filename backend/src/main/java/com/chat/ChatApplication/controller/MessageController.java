@@ -3,6 +3,7 @@ package com.chat.ChatApplication.controller;
 
 import com.chat.ChatApplication.model.Message;
 import com.chat.ChatApplication.service.MessageService;
+import com.chat.ChatApplication.util.PathUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/message")
+@RequestMapping(PathUtil.MESSAGE)
 @RequiredArgsConstructor
 public class MessageController {
 
@@ -24,4 +25,7 @@ public class MessageController {
     public ResponseEntity<List<Message>> getMessages(@PathVariable String room) {
         return ResponseEntity.ok(messageService.getMessages(room));
     }
+
+
+
 }
